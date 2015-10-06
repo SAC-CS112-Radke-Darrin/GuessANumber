@@ -4,25 +4,27 @@ public class GuessANumber {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		Scanner input = new Scanner(System.in);
+		Scanner inp = new Scanner(System.in);
 		
-		int computerNum;
-		int userNum;
-		String response;
+		int compNum;
+		int usrNum;
+		int count = 1;
 		
-		computerNum = 1+(int)(Math.random()*10);
+		while (count <= 3){
+			count++;
+			compNum = 1 + (int)(Math.random()*10);
+			System.out.println("Guess a number between 1 & 10.");
+			usrNum = inp.nextInt();
+			if (usrNum > compNum){
+				System.out.println("Too big.");}
+			else if (usrNum < compNum){
+				System.out.println("Too small.");}
+			else
+				System.out.println("Match.");}
 		
-		System.out.print("Guess a number between 1 & 10: ");
+		System.out.println("End.");
 		
-		userNum = input.nextInt();
-		
-		response = (userNum == computerNum) ? "Good guess!" : "Wrong.";
-		
-		System.out.println(response);
-		
-		input.close();
-		
-	}
+		inp.close();
+		}
 
 }
